@@ -19,4 +19,6 @@ export class AppComponent {
     { name: 'Erasers', description: 'a package of 3 large pink erasers', price: 1.29 },
   ];
 
+  invalidData: boolean = true;
+
 }
