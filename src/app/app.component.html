@@ -5,10 +5,12 @@
   <p>${{ item.price }} each</p>
 </div>
 
+
 <!-- Structural Directive *ngIf - Conditional Display -->
 <div *ngIf="invalidData">
   <p class="error">Some error message...</p>
 </div>
+
 
 <!-- Alternate content with else and ng-template -->
 <p *ngIf="loaded; else loading">
@@ -19,3 +21,12 @@
   <p>{{ loadingMessage }}</p>
 </ng-template>
 
+
+<!-- Input Values with Event Binding -->
+<input #firstName type="text" /> 
+<input #lastName type="text" />
+
+<div id="business-card-mockup">
+  <!-- Will not update on page dynamically without event binding above -->
+	<p>{{ firstName.value }} {{ lastName.value }}</p>
+</div>
