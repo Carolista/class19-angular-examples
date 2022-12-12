@@ -1,8 +1,7 @@
 <!-- Structural Directive *ngFor - Looping -->
 <div *ngFor="let item of itemsForSale">
   <h3>{{ item.name }}</h3>
-  <p>{{ item.description }}</p>
-  <p class="price">${{ item.price }} each</p>
+  <p>{{ item.description }} - <span class="price">${{ item.price }}</span> each</p>
 </div>
 
 
