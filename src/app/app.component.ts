@@ -21,4 +21,8 @@ export class AppComponent {
 
   invalidData: boolean = true;
 
+  loaded: boolean = false;
+
+  loadingMessage: string = 'Please wait while we gather your information...';
+
 }
