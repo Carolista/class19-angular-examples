@@ -6,6 +6,11 @@ interface Item {
   price: number,
 }
 
+interface ContactInfo {
+  phoneNumber: string,
+  emailAddress: string,
+}
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -24,5 +29,18 @@ export class AppComponent {
   loaded: boolean = false;
 
   loadingMessage: string = 'Please wait while we gather your information...';
+
+  contactInfo: ContactInfo = {
+    phoneNumber: '',
+    emailAddress: '',
+  };
+
+  saveContactInfo(phoneValue: string, emailValue: string): void {
+    this.contactInfo = {
+      phoneNumber: phoneValue,
+      emailAddress: emailValue,
+    }
+    console.log('contactInfo updated:', this.contactInfo);
+  }
 
 }

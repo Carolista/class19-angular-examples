@@ -2,7 +2,7 @@
 <div *ngFor="let item of itemsForSale">
   <h3>{{ item.name }}</h3>
   <p>{{ item.description }}</p>
-  <p>${{ item.price }} each</p>
+  <p class="price">${{ item.price }} each</p>
 </div>
 
 
@@ -23,10 +23,20 @@
 
 
 <!-- Input Values with Event Binding -->
-<input #firstName type="text" /> 
-<input #lastName type="text" />
+<label>First name: </label><input #firstName type="text" (keyup)="true" /> 
+<label> Last name: </label><input #lastName type="text" (input)="true" />
 
 <div id="business-card-mockup">
   <!-- Will not update on page dynamically without event binding above -->
 	<p>{{ firstName.value }} {{ lastName.value }}</p>
 </div>
+
+
+<!-- Event Handling -->
+<h2>My Profile</h2>
+<h3>Contact Information</h3>
+<label>Phone: </label><input #phone type="tel" /> 
+<label> Email: </label><input #email type="email" />
+
+<!-- Pass the values of the input elements into the event handler -->
+<button (click)="saveContactInfo(phone.value, email.value)">Save</button>
